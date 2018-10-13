@@ -7,3 +7,4 @@ testing
 .vscode
 amaze
 *.txt
+!makefile
