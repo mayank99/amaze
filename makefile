@@ -1,13 +1,16 @@
 OBJS =  amaze.o maze.o cell.o queue.o cda.o
 MAIN = amaze
-OOPTS = -Wall -Wextra -g -c
-LOPTS = -Wall -Wextra -g
+OOPTS = -Wall -Wextra -g -std=c99 -c
+LOPTS = -Wall -Wextra -g -std=c99
 
 all : $(MAIN)
 
 test : $(MAIN)
 	./amaze -c 3 3 m.data -s m.data m.solved -d m.solved
 	
+valgrind : $(MAIN)
+	valgrind ./amaze -c 3 3 m.data -s m.data m.solved -d m.solved
+
 amaze : $(OBJS)
 	gcc $(LOPTS) $(OBJS) -o amaze
 
