@@ -117,7 +117,9 @@ void solveMAZEinternal(MAZE *maze, CELL *start) {
     }
   }
 
-  if (queue) freeQUEUE(queue);
+  // Clear the queue when done
+  while (sizeQUEUE(queue) > 0) ((CELL *)dequeue(queue))->value = -1;
+  freeQUEUE(queue);
 }
 
 /* solves a maze using breadth-first traversal */

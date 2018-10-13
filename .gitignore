@@ -3,6 +3,7 @@
 !*.*
 *.o
 testing
+.testing
 .vscode
 amaze
 *.txt
