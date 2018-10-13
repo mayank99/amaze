@@ -166,12 +166,10 @@ MAZE *readMAZE(FILE *file) {
 /* draws the maze to stdout */
 void drawMAZE(MAZE *maze) {
   printf("-");
-  for (int i = 0; i < maze->columns; i++) {
-    printf("----");
-  }
-  printf("\n");
+  for (int i = 0; i < maze->columns; i++) printf("----");
 
   for (int i = 0; i < maze->rows; i++) {
+    printf("\n");
     if (i == 0)
       printf(" ");
     else
@@ -196,17 +194,17 @@ void drawMAZE(MAZE *maze) {
         printf("   ");
       printf("-");
     }
-    printf("\n");
+    // printf("\n");
   }
 }
 
 /* destructor for MAZE class */
 void freeMAZE(MAZE *maze) {
   for (int i = 0; i < maze->rows; i++) {
-      for (int j = 0; j < maze->columns; j++) {
-        free(maze->grid[i][j]);
-      }
-      free(maze->grid[i]);
+    for (int j = 0; j < maze->columns; j++) {
+      free(maze->grid[i][j]);
+    }
+    free(maze->grid[i]);
   }
   free(maze->grid);
   free(maze);
