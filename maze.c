@@ -89,7 +89,7 @@ void buildMAZEinternal(MAZE *maze, CELL *cell) {
 /* builds a maze using depth-first traversal */
 void buildMAZE(MAZE *maze, int seed) {
   srandom(seed);
-  CELL *start = maze->grid[0][0];  // Start recursing at 0
+  CELL *start = maze->grid[0][0];  // Start recursing at 0,0
   start->visited = 1;
   buildMAZEinternal(maze, start);
 }
@@ -104,7 +104,7 @@ void solveMAZEinternal(MAZE *maze, CELL *start) {
 
   while (sizeQUEUE(queue) > 0) {
     CELL *cell = dequeue(queue);
-    if (cell->row == maze->rows - 1 && cell->column == maze->columns - 1) break;
+    if (cell->row == maze->rows - 1 && cell->column == maze->columns - 1) break; // SOLVED‼
 
     // enqueue unvisited neighbors
     for (int i = 0; i < 4; i++) {
@@ -124,7 +124,7 @@ void solveMAZEinternal(MAZE *maze, CELL *start) {
 
 /* solves a maze using breadth-first traversal */
 void solveMAZE(MAZE *maze) {
-  CELL *start = maze->grid[0][0];  // Start recursing at 0
+  CELL *start = maze->grid[0][0];  // Start traversing at 0,0
   start->value = 0;
   solveMAZEinternal(maze, start);
 }
@@ -194,7 +194,6 @@ void drawMAZE(MAZE *maze) {
         printf("   ");
       printf("-");
     }
-    // printf("\n");
   }
 }
 
