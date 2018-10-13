@@ -1,0 +1,8 @@
+*
+!*/
+!*.*
+*.o
+testing
+.vscode
+amaze
+*.txt
