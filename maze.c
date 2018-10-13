@@ -104,7 +104,7 @@ void solveMAZEinternal(MAZE *maze, CELL *start) {
 
   while (sizeQUEUE(queue) > 0) {
     CELL *cell = dequeue(queue);
-    if (cell->row == maze->rows - 1 && cell->column == maze->columns - 1) break; // SOLVED‼
+    if (cell->row == maze->rows - 1 && cell->column == maze->columns - 1) break;  // SOLVED‼
 
     // enqueue unvisited neighbors
     for (int i = 0; i < 4; i++) {
@@ -167,9 +167,9 @@ MAZE *readMAZE(FILE *file) {
 void drawMAZE(MAZE *maze) {
   printf("-");
   for (int i = 0; i < maze->columns; i++) printf("----");
+  printf("\n");
 
   for (int i = 0; i < maze->rows; i++) {
-    printf("\n");
     if (i == 0)
       printf(" ");
     else
@@ -194,6 +194,7 @@ void drawMAZE(MAZE *maze) {
         printf("   ");
       printf("-");
     }
+    printf("\n");
   }
 }
 
