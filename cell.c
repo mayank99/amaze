@@ -1,3 +1,6 @@
+/**
+ * Created by Mayank Agarwal
+ */
 #include "cell.h"
 #include <stdlib.h>
 

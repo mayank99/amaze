@@ -7,6 +7,7 @@ all : $(MAIN)
 
 test : $(MAIN)
 	./amaze -c 3 3 m.data -s m.data m.solved -d m.solved
+	time ./amaze -c 800 800 maze -s maze maze -d maze > out.txt
 	
 valgrind : $(MAIN)
 	valgrind ./amaze -c 3 3 m.data -s m.data m.solved -d m.solved

@@ -1,3 +1,6 @@
+/**
+ * Created by Mayank Agarwal
+ */
 #ifndef __MAZE_INCLUDED__
 #define __MAZE_INCLUDED__
 

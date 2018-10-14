@@ -1,3 +1,6 @@
+/**
+ * Created by Mayank Agarwal
+ */
 #include "maze.h"
 #include <stdlib.h>
 #include "queue.h"

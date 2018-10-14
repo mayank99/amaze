@@ -1,3 +1,6 @@
+/**
+ * Created by Mayank Agarwal
+ */
 #include "amaze.h"
 #include <stdarg.h>
 #include <stdio.h>
